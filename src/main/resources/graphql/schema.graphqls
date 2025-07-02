@@ -1,0 +1,7 @@
+# TODO GraphQL Schema
+# This is a placeholder schema file for the TODO application
+# It will be populated with actual schema definitions in the next steps
+
+type Query {
+    hello: String
+}
