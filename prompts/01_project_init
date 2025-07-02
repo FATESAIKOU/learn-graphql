@@ -1,0 +1,65 @@
+# 執行動作
+
+這次需要你建立一個新的專案基底，專案的各項詳細如下
+
+## 專案目的
+
+本專案是一個用於學習和實驗的基礎專案，目的是提供一個簡單的起始點，讓開發者可以在此基礎上進行擴展和實驗。
+主要是用來學習 Java + Spring Boot + GraphQL 的基礎知識，並實現一個簡單的 CRUD 應用。
+
+## 專案需求
+
+1. 使用 Java 語言
+2. 使用 Spring Boot 框架
+3. 使用 GraphQL 作為 API 接口
+4. 實現一個簡單的 TODO CRUD 應用，包含以下功能
+   - 創建（Create）
+   - 讀取（Read）
+   - 更新（Update）
+   - 刪除（Delete）
+5. 資料庫不強求 根據需要可以使用 PostgreSql H2 或其他輕量級資料庫
+6. 最終完成程式碼 單元測試 文檔 以及 dockercompose 文件(用來在本地快速啟動專案測試)
+
+## 專案技術棧
+- Java 21.x 或以上版本
+- Spring Boot 3.x
+- GraphQL Java
+- H2 或 PostgreSQL 資料庫
+- Maven 或 Gradle 作為構建工具
+- JUnit 5 作為測試框架
+- Docker Compose 用於容器化部署
+
+※ 關於程式碼的自動格式化和風格檢查，因需要你提案一個 linter 和 formatter 的組合，不用跟 IDE 結合 因為我打算用 git commit hook 來自動格式化程式碼
+
+## 專案實現步驟
+
+1. 初始化 Spring Boot 專案
+   - 使用 Spring Initializr 創建一個新的 Spring Boot 專案
+   - 選擇 Java 版本、Spring Boot 版本和所需的依賴（如 Web、GraphQL、JPA、H2/PostgreSQL 等）
+    - 配置 Maven 或 Gradle 作為構建工具(推薦Gradle)
+2. 套用 Linter 和 Formatter + git commit hook
+   - 選擇適合的 Java Linter 和 Formatter（如 Checkstyle、Spotless 等）
+   - 配置 git commit hook 以自動格式化程式碼
+   - 提供相關配置文件（如 .checkstyle.xml、.spotless.gradle 等）
+3. 設置資料庫
+   - 配置 H2 或 PostgreSQL 資料庫連接
+   - 創建必要的資料庫表結構
+4. 實現 TODO CRUD 功能
+   - 創建 TODO 實體類
+   - 創建 TODO Repository 接口
+   - 實現 TODO Service 類
+   - 創建 GraphQL Schema 定義
+   - 實現 GraphQL Resolver 類
+5. 編寫單元測試
+   - 使用 JUnit 5 編寫單元測試，確保 CRUD 功能正常運作
+6. 編寫文檔
+   - 撰寫專案文檔，包含安裝、使用和測試說明
+7. 創建 Docker Compose 文件
+   - 編寫 Dockerfile 和 docker-compose.yml 文件，用於容器化部署專案
+8. 測試和驗證
+   - 在本地環境中運行專案，確保所有功能正常運作
+   - 測試 CRUD 功能，確保資料庫操作正確
+
+※ 每一步在執行前都執行設計後讓我review，然後再進行實作
+   - 每一步都需要提供相關的程式碼片段和配置文件
+   - 每一步完成後都需要進行測試，確保功能正常
