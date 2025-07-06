@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Pre-commit hook to auto-format Java code using Spotless
+#
+
+echo "Running Spotless auto-format..."
+
+# Run spotless apply to format code
+./gradlew spotlessApply
+
+# Add all changes back to staging area
+git add -A
+
+echo "Code formatting completed."
