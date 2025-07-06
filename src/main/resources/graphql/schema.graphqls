@@ -1,7 +1,49 @@
-# TODO GraphQL Schema
-# This is a placeholder schema file for the TODO application
-# It will be populated with actual schema definitions in the next steps
+# TODO Application GraphQL Schema
 
 type Query {
+    # Get all todos
+    todos: [Todo!]!
+    
+    # Get todo by ID
+    todo(id: ID!): Todo
+    
+    # Get todos by status
+    todosByStatus(completed: Boolean!): [Todo!]!
+    
+    # Test query
     hello: String
+}
+
+type Mutation {
+    # Create a new todo
+    createTodo(input: CreateTodoInput!): Todo!
+    
+    # Update an existing todo
+    updateTodo(id: ID!, input: UpdateTodoInput!): Todo
+    
+    # Toggle todo completion status
+    toggleTodo(id: ID!): Todo
+    
+    # Delete a todo
+    deleteTodo(id: ID!): Boolean!
+}
+
+type Todo {
+    id: ID!
+    title: String!
+    description: String
+    completed: Boolean!
+    createdAt: String!
+    updatedAt: String!
+}
+
+input CreateTodoInput {
+    title: String!
+    description: String
+}
+
+input UpdateTodoInput {
+    title: String
+    description: String
+    completed: Boolean
 }

@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      maximum-pool-size: 5
+      minimum-idle: 2
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      leak-detection-threshold: 60000
+      
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    properties:
+      hibernate:
+        jdbc:
+          batch-size: 20
+        format-sql: false
+
+logging:
+  level:
+    '[org.hibernate.SQL]': WARN
+    '[org.testcontainers]': WARN
+    '[com.github.dockerjava]': WARN
+    '[com.zaxxer.hikari]': WARN
+    root: WARN
